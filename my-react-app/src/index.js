@@ -36,7 +36,54 @@ const myfirstElement = <div id="container2">
   <h3>JavaScript XML</h3>
   <h3>JSX allows us to write HTML in React</h3>
   <h2>Coding JSX</h2>
-  
+  <p>
+  It gives us to write HTML elements in JS and place them in the DOM without any <b>createElement()</b> and <br />
+  <b>appendChild()</b> methods. JSX converts HTML tags into React Elements.
+  </p>
+  <h2>Expressions in JS</h2>
+  <p>
+    With JSX we can write expressions inside curly braces '4 * 4' inside of the braces is: '{ 4 * 4 }'. <br /> 
+    This expression can be a React variable or property or any other valid JS expression. <br />
+    JSX will execute the expression and return the result. Like this: 4 + 4 inside of the braces is = {4+4}
+  </p>
+  <h2>Inserting a Large Block of HTML</h2>
+  <p>
+    If we want to write HTML on <b>multiple lines</b>, we need to put the HTML inside parentheses: <br />
+  </p>
+  const mySmoothie = (
+      <ul>
+        <li>Spaniach</li>
+        <li>Mint</li>
+        <li>Parsley</li>
+      </ul>
+    );
+    <p>
+      If we want to <b>write TWO Paragraph</b>, we must put them inside a <b>parent element like a div:</b>
+    </p>
+    const myBikes = (
+      <div>
+        <h2>Canyon</h2>
+        <h2>Cannondale</h2>
+      </div>
+    )
+    <p>
+      Or we can use <b>"Fragment"</b> to wrap multiple lines. This will prevent unnecessarily adding extra nodes to the DOM. <br />
+      A fragment is like this: <br />
+    </p>
+    const myBikes2 = (
+      <>
+      <p>This is my old bike.</p>
+      <p>This is my new bike.</p>
+      </>
+    )
+    <p>
+      JSX follows XML rules, thus HTML elements must be properly closed like this: <br />
+    </p>
+    const myInput = <input type='text' />
+    <h2>JSX Attribute class = className</h2>
+    <p>
+      
+    </p>
   </div>
 
 
