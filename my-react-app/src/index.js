@@ -1,12 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
+import Bike2 from './Bike2.js';
+import Bike3 from './Bike2.js';
+import MyBikes3 from './MyBikes3.js';
 
 const x = 5; //This is for Ternary Expressions in 
-// A Function Component
-function Bike2() {
-  return <h2>Hi I'm a Bike!</h2>;
-}
 
 const myfirstElement = 
 <div id="container2">
@@ -151,10 +149,48 @@ const myfirstElement =
     <h2>Props</h2>
     <p>
       Components can be passed as <b>props,</b> which stands for properties. <br />
-      
+      <b>Props</b> are like function arguments, and we send them into the <b>component attributes.</b> <br />
+      <span>
+        <b>
+        {"function Bike3(props) {" } <br />
+        {"return <h3>I am a {props.color} Bike!</h3>"} <br />
+        {"}"}  <br />
+        </b>
+      </span>
+      <span>
+        And the render is: <b>{"<Bike3 color='grey' />"}</b>  <br />
+      </span>
+    </p>
+    <span>The output is: </span> <Bike3 color="grey" />
+    <hr />
+    <h2>Components in Components</h2>
+    <MyBikes3 />
+    <hr />
+    <h2>Components in Files</h2>
+    <p>
+      React is all about <b>re-using</b> code, and it recommended to split our components into separate files. <br/>
+      To do that, create a new file with a <b>.js</b> file extension and put the code inside it like this: <br />
+      ##NOTE -- The <b>filename</b> MUST start with an UpperCase character. <br />
+      We created a file named <b>"Bike.js":</b> <br />
+    </p>
+    <h3>To able to use the Bike Component, we have to IMPORT the file in our Application</h3>
+    <h4>Export inside of "Bike2.js" File:</h4>
+    <p> 
+      In the <b>"Bike.js"</b> file: export! <br />
+      <b>
+      {"function Bike2() {"} <br />
+      {"return <h2>Hi I'm a Bike!</h2>;"} <br />
+      {"}"} <br />
+    </b>
+    <b>export default Bike2;</b> <br />
+    <br />
+    <h4>Import inside of "Bike2.js" File:</h4>
+    In the <b>"index.js"</b> file import! (at the top of the page) <br />
+    <b>import from './Bike2.js'</b>
     </p>
   </div>
-  
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(myfirstElement);
