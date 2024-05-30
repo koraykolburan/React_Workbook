@@ -29,7 +29,7 @@ class Car extends React.Component {
           this.setState({model:"EC 04"});
      }
      
-     /* This is for unounting - deleting the header
+     /* This is for unmounting - deleting the header
      delHeader = () => {
           this.setState({show:false})
      }
@@ -49,7 +49,7 @@ class Car extends React.Component {
                     type='button'
                     onClick={this.changeColorVehicle}
                >
-                    Change Color
+                    Change Properties
                </button>
           </div>
        );

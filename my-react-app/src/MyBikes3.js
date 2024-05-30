@@ -1,17 +1,17 @@
 //Components in Components example
 function GreyOne() {
-     return <h3>Canyons bikes.</h3>
+     return <u>Canyons bikes.  <br /></u>
 }
 function RedOne() {
-     return <h3>Cannondales bikes.</h3>
+     return <u>Cannondales bikes.  <br /></u>
 }
 function PurpleOne() {
-     return <h3>Mossos bikes.</h3>
+     return <u>Mossos bikes.  <br /></u>
 }
 function MyBikes3() {
      return (
           <>
-          <h2>What is sorting of your favourite bikes?</h2>
+          <h4>What is sorting of your favourite bikes?</h4>
           <GreyOne />
           <RedOne />
           <PurpleOne />

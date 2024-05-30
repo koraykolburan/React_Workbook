@@ -1,14 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Bike2 from './Bike2.js';
-import Bike3 from './Bike2.js';
+//import Bike3 from './Bike3.js';
 import MyBikes3 from './MyBikes3.js';
 import Car from './Car.js';
+import Garage from './Garage.js';
 
 const x = 5; //This is for Ternary Expressions in 
 
 const myfirstElement = 
-<div id="container2" style={{padding: '50px',lineHeight: '28px', fontFamily: 'verdana', fontSize:'15px'}}>
+<div id="container2" style={{
+  padding: '50px',
+  lineHeight: '28px',
+  fontFamily: 'verdana',
+  fontSize:'15px',
+  backgroundColor:'black',
+  color:"#C5A5C5"
+  }}>
+
   <h1>JS React!</h1> 
   <h2>Using React, we render HTML in a web page in many ways.</h2>
   <h3>React renders HTML to the web page using a function called createRoot() and its method render().</h3>
@@ -147,23 +156,46 @@ const myfirstElement =
     </p>
     <span><Bike2 />{/* This is for rendering A Component */}</span>
     <hr />
+
+    {/* -------------------------------------  PROPS -------------------------------------  */}
     <h2>Props</h2>
     <p>
+      Props are arguments passed into React components. <br />
+      Props are passed to components via HTML attributes. <br />
+      ##NOTE -- <b>props</b> stands for <b>properties.</b> <br />
       Components can be passed as <b>props,</b> which stands for properties. <br />
       <b>Props</b> are like function arguments, and we send them into the <b>component attributes.</b> <br />
+      Props are also how we pass data from one component to another, <b>as parameters.</b> <br />
+      We send the <b>brand</b> property from the Garage component to the Bike3 component: <br />
+      <br />
       <span>
         <b>
         {"function Bike3(props) {" } <br />
-        {"return <h3>I am a {props.color} Bike!</h3>"} <br />
+        {"return <h3>I am a {props.brand.model} Bike! My brand is {props.brand.name}, and my color is {props.brand.color}</h3>"} <br />
         {"}"}  <br />
+        <br />
+        
+        {"function Garage() {"}  <br />
+        {/* {"const bikeName = 'Canyon'"}  <br /> */}
+        {"const bikeInfo = { name: 'Canyon', model : 'Road Bike', color : 'Grey' }"}  <br />
+        {"return ("}  <br />
+        {"<>"}  <br />
+        {"<h2>Which Brands I have in my Garage?</h2>"}  <br />
+        {"<Bike3 brand= { bikeInfo } />"}  <br />
+        {"</>"}  <br />
+        {"}"}  <br />
+        And the render: {"root.render(<Garage />);"}  <br />
         </b>
       </span>
       <span>
-        And the render is: <b>{"<Bike3 color='grey' />"}</b>  <br />
+        ##NOTE -- React Props are <b>Read-Only!</b>  <br />
+        We will get an error if we try to change their value! <br />
       </span>
     </p>
-    <span>The output is: </span> <Bike3 color="grey" />
+    <span>The output is: </span> <Garage />
     <hr />
+
+    {/* -------------------------------------  COMPS. IN COMPS. -------------------------------------  */}
     <h2>Components in Components</h2>
     <MyBikes3 />
     <hr />
@@ -191,6 +223,9 @@ const myfirstElement =
     In the <b>"index.js"</b> file import! (at the top of the page) <br />
     <b>import from './Bike2.js'</b>
     </p>
+
+    {/* -------------------------------------  React Class Components -------------------------------------  */}
+    <hr />
     <h2>React Class Components</h2>
     <p>
       Before React 16.8, Class components were the only way to track state and lifecycle on a React component. <br />
@@ -272,7 +307,7 @@ const myfirstElement =
       {"Its model is: {this.state.model} "} <br/>
       {"Its year is: {this.state.year} "} <br/>
       {"</p> "} <br/>
-      {"<button type='button' onClick={this.changeColor}> "} <br/>
+      {"<button type='button' onClick={this.changeColor}>Change Properties "} <br/>
       {"</button> "} <br/>
       {"</div>"} <br/>
       {")}}"} <br/>
@@ -291,9 +326,13 @@ const myfirstElement =
       a) constructor(), b) getDerivedStateFromProps(), c) render(), d)c omponentDidMount() <br />
       <b>2: Updating</b> A component is updated whenever there is a change in the component's <b>state or props.</b><br />
       a) getDerivedStateFromProps(), b) shouldComponentUpdate(), c) render(), d) getSnapshotBeforeUpdate(), e) componentDidUpdate() <br />
-      <b>3: Unmounting</b> <br />
-
+      <b>3: Unmounting</b> means: deleting elements from the DOM. <br />
     </p>
+    <hr />
+
+    {/* -------------------------------------  React Events -------------------------------------  */}
+    
+
   </div>
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
