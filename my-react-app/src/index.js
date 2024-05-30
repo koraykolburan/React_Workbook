@@ -6,6 +6,7 @@ import MyBikes3 from './MyBikes3.js';
 import Car from './Car.js';
 import Garage from './Garage.js';
 import Football from './Shoot.js'
+import Log from './IsLogin.js';
 
 const x = 5; //This is for Ternary Expressions in 
 
@@ -109,6 +110,7 @@ const myfirstElement =
     </p>
     const myElement2 = <h3 className='myclass'>This is className example.</h3>
     <hr />
+    {/* -------------------------------------  React Conditionals -------------------------------------  */}
     <h2>Conditions - If Statements</h2>
     <p>
       We need to use <b>Ternary Expressions</b> instead of if statements in JSX. <br />
@@ -366,7 +368,36 @@ const myfirstElement =
      {"); }"} <br />
     </span>
     <Football /> The output is gonna be 'click' because we wrote {"alert(b.type);"} to onClick event.
+    <br />
+    <hr />
 
+    {/* --------------------------------- React Conditional Rendering ---------------------------------  */}
+    <h2>React Conditional Rendering</h2>
+    <p>
+      In React, we can conditionally render components.<br />
+      There are several ways to do this.<br />
+      If statements:<br />
+    {"function Login() {"} <br />
+    {"return <h1>Welcome Your Profile!</h1>"} <br />
+    {"}"} <br />
+    {"function Logout() {"} <br />
+    {"return <h2>Goodbye! See you soon...</h2>"} <br />
+    {"}"} <br />
+    {"function Log(props)"} <br />
+    {"const isLogin = props.isLogin;"} <br />
+    {"if (isLogin) {"} <br />
+    {"return <Login />;"} <br />
+    {"}"} <br />
+    {"return <Logout />;"} <br />
+    {"}"} <br />
+    {"(<Log isLogin={true} />"} <br />
+    </p>
+    <span>The output is:</span> <Log isLogin={true}/>
+    <h3>Logical && Operator</h3>
+    <p>
+      Another way to conditionally render a React Component is by using the <b>&&</b> Operator. <br />
+      
+    </p>
   </div>
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
