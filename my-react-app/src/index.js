@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Bike2 from './Bike2.js';
-//import Bike3 from './Bike3.js';
 import MyBikes3 from './MyBikes3.js';
 import Car from './Car.js';
 import Garage from './Garage.js';
 import Football from './Shoot.js'
 import Log from './IsLogin.js';
 import Garage2 from './Garage2.js';
+import Motorbikes from './Motorbikes.js'
+import MotorsGarage from './MotorsGarage.js';
 
 const x = 5; //This is for Ternary Expressions in 
 const bikes = ['Canyon', 'Cannondale', 'Mosso']; // This is for Garage2 && And Logical operator
@@ -443,6 +444,14 @@ const myfirstElement =
     </p>
     The output (true) is: <Log isLogin={true} /> <br />
     OR the output (false) is: <Log isLogin={false} /> <br />
+
+    {/* --------------------------------- React Lists ---------------------------------  */}
+    <h2>React Lists</h2>
+    <p>
+      In React, we will render lists with some type of loop. <br />
+      The JS <b>map()</b> array method is generally the <b>preferred</b> method. <br />
+    </p>
+    <MotorsGarage />
   </div>
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
