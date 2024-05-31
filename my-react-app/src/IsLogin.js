@@ -3,11 +3,11 @@ import Logout from './Logout';
 
 function Log (props) {
      const isLogin = props.isLogin;
-
-     if(isLogin) {
-          return <Login />
-     }
-     return <Logout />
+     return (
+          <>
+          { isLogin ? <Login /> : <Logout />}
+          </>
+     )
 }
 
 export default Log;
