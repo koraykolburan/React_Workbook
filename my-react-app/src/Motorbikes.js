@@ -1,6 +1,6 @@
 
 function Motorbikes(props) {
-     return <li>This is { props.brand }</li>
+     return <li>This is a { props.brand }</li>
 }
 
 
