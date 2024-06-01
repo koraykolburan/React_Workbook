@@ -7,8 +7,8 @@ import Garage from './Garage.js';
 import Football from './Shoot.js'
 import Log from './IsLogin.js';
 import Garage2 from './Garage2.js';
-import Motorbikes from './Motorbikes.js'
 import MotorsGarage from './MotorsGarage.js';
+import MyForm from './MyForm.js';
 
 const x = 5; //This is for Ternary Expressions in 
 const bikes = ['Canyon', 'Cannondale', 'Mosso']; // This is for Garage2 && And Logical operator
@@ -19,8 +19,8 @@ const myfirstElement =
   lineHeight: '28px',
   fontFamily: 'verdana',
   fontSize:'15px',
-  backgroundColor:'black',
-  color:"#C5A5C5"
+  // backgroundColor:'black',
+  // color:"#C5A5C5"
   }}>
 
   <h1>JS React!</h1> 
@@ -471,6 +471,32 @@ const myfirstElement =
       </b>
     </p>
     The output is: <MotorsGarage />
+    <hr />
+
+    {/* --------------------------------- React Forms ---------------------------------  */}
+    <h2>React Forms</h2>
+    <p>
+      Just like HTML, React uses forms to allow users to interact with the webpage. <br />
+      When we use the <b>Forms</b> as like in the HTML, they will work as normal, the form will submit and the page will refresh. <br />
+      We want to prevent this <b>default</b> behaviour and let React control the form. <br />
+    </p>
+    <h3>
+      Handling Forms
+    </h3>
+    <p>
+      In HTML, form data is usually handled by the <b>DOM.</b> <br />
+      In React, form data is usually handled by the <b>components.</b> <br />
+      When the data is handled by the components, all the data is stored in the components state. <br />
+      We can control changes by adding event handlers in the <b>onChange</b> attribute. <br />
+      We can use <b>useState Hook</b> to keep track of each inputs value and provide a "single source of truth" for the entire Application. <br />
+    </p>
+    <h3>
+      Submitting Forms
+    </h3>
+    <p>
+      We can control the submit action by adding an event handler in the <b>onSubmit</b> attribute for the {"<form>"}
+    </p>
+    <MyForm />
   </div>
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
