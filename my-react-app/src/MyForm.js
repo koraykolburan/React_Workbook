@@ -1,26 +1,38 @@
 import { useState } from "react";
 
 function MyForm() {
-     const [name, setName] = useState(""); //This is for Handling Forms
+     const [inputs, setInputs] = useState({}); //This is for Handling Forms useState()
 
-     const handleSubmit = (event) => { //This is for submitting Forms
+     const handleChange = (event) => {
+          const name = event.target.name; //To access the fields in the event handler 
+          const value = event.target.value;
+          setInputs(values =>({...values, [name]: value}))
+     }
+
+     const handleSubmit = (event) => {
           event.preventDefault();
-          alert(`The name you entered was: ${name}`)
+          alert(`You name is: ${inputs.username}, and your age is: ${inputs.age}`)
      }
 
      return (
-          <form onSubmit={handleSubmit}> 
-               <label for="names">
-               Your E-mail: <br />
+          <form onSubmit={handleSubmit}>
+               <label>Name & Surname: <br />
                <input
                type="text"
-               value={name} 
-               onChange={(e) => setName(e.target.value)} 
-               id="names" 
-               name="names" 
+               name="username"
+               value={inputs.username || ""}
+               onChange={handleChange}
+               /> 
+               </label><br />
+               <label>Age: <br />
+               <input
+               type="number"
+               name="age"
+               value={inputs.age || ""}
+               onChange={handleChange}
                /> <br />
-               <input type="submit" />
                </label>
+               <input type="submit" />
           </form>
      )
 }

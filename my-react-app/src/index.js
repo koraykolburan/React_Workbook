@@ -496,7 +496,25 @@ const myfirstElement =
     <p>
       We can control the submit action by adding an event handler in the <b>onSubmit</b> attribute for the {"<form>"}
     </p>
+    <h3>
+      Multiple Forms
+    </h3>
+    <p>
+      We can control the values of more than one input field by adding a <b>name</b> attribute to each element. <br />
+      We will initialize our state with an empty object. <br />
+      To access the fields in the event handler use the <b>event.target.name</b> and <b>event.target.value</b> syntax. <br />
+      To update the state, use square brackets [bracket notation] around the property name. <br />
+      Please find the <b>MyForm Component</b> in the MyForm.js folder.
+    </p>
     <MyForm />
+    <h3>
+      Textarea
+    </h3>
+    <p>
+      The textarea element in React is slightly different from ordinary HTML. <br />
+      In HTML the value of a textarea was the text between the start {"<textarea>"} and the end tag {"</textarea>"} <br /> 
+      In React, the value of textarea is placed in a value attribute. We'll use the <b>useState</b> Hook to manage the value of the textarea: <br />
+    </p>
   </div>
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
