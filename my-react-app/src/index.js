@@ -9,6 +9,8 @@ import Log from './IsLogin.js';
 import Garage2 from './Garage2.js';
 import MotorsGarage from './MotorsGarage.js';
 import MyForm from './MyForm.js';
+import MyForm2 from './MyForm2.js';
+import MyForm3 from './MyForm3.js';
 
 const x = 5; //This is for Ternary Expressions in 
 const bikes = ['Canyon', 'Cannondale', 'Mosso']; // This is for Garage2 && And Logical operator
@@ -19,8 +21,8 @@ const myfirstElement =
   lineHeight: '28px',
   fontFamily: 'verdana',
   fontSize:'15px',
-  // backgroundColor:'black',
-  // color:"#C5A5C5"
+  backgroundColor:'#15202B',
+  color:"#e5e5e5"
   }}>
 
   <h1>JS React!</h1> 
@@ -444,6 +446,7 @@ const myfirstElement =
     </p>
     The output (true) is: <Log isLogin={true} /> <br />
     OR the output (false) is: <Log isLogin={false} /> <br />
+    <hr />
 
     {/* --------------------------------- React Lists ---------------------------------  */}
     <h2>React Lists</h2>
@@ -488,7 +491,7 @@ const myfirstElement =
       In React, form data is usually handled by the <b>components.</b> <br />
       When the data is handled by the components, all the data is stored in the components state. <br />
       We can control changes by adding event handlers in the <b>onChange</b> attribute. <br />
-      We can use <b>useState Hook</b> to keep track of each inputs value and provide a "single source of truth" for the entire Application. <br />
+      We can use <b>useState Hook</b> <u>to keep track of each inputs value</u> and provide a "single source of truth" for the entire Application. <br />
     </p>
     <h3>
       Submitting Forms
@@ -503,7 +506,7 @@ const myfirstElement =
       We can control the values of more than one input field by adding a <b>name</b> attribute to each element. <br />
       We will initialize our state with an empty object. <br />
       To access the fields in the event handler use the <b>event.target.name</b> and <b>event.target.value</b> syntax. <br />
-      To update the state, use square brackets [bracket notation] around the property name. <br />
+      <u>To update the state,</u> use square brackets [bracket notation] around the property name. <br />
       Please find the <b>MyForm Component</b> in the MyForm.js folder.
     </p>
     <MyForm />
@@ -513,8 +516,25 @@ const myfirstElement =
     <p>
       The textarea element in React is slightly different from ordinary HTML. <br />
       In HTML the value of a textarea was the text between the start {"<textarea>"} and the end tag {"</textarea>"} <br /> 
-      In React, the value of textarea is placed in a value attribute. We'll use the <b>useState</b> Hook to manage the value of the textarea: <br />
+      In React, the value of textarea is placed in a value attribute. <br /> 
+       We'll use the <b>useState</b> Hook to <u>manage the value</u> of the textarea: <br />
     </p>
+    <span>The output is:</span> <MyForm2 />
+    <br />
+    <h3>
+      Select
+    </h3>
+    <p>
+      In React, A drop down list, or a select box, also different from HTML. <br />
+      In HTML, the selected value in the drop down list was defined with the <b>selected</b> attribute: <br />
+      {"<select>"} <br />
+      {"<option value='BMW'>BMW</option>"} <br />
+      {"<option value='Aston Martin' selected>Aston Martin</option>"} <br />
+      {"<option value='Mercedes'>Mercedes</option>"} <br />
+      {"</select>"} <br /><br />
+      In React, the <b>selected value</b> is defined with a <b>value</b> attribute on the <b>select</b> tag. <br />
+    </p>
+    <span>The output is:</span> <MyForm3 />
   </div>
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
