@@ -1,5 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from './pages/Layout.js';
+import Home from './pages/Home.js';
+import Blogs from './pages/Blogs.js';
+import Contact from './pages/Contact.js';
+import NoPages from './pages/NoPages.js';
+
 import Bike2 from './Bike2.js';
 import MyBikes3 from './MyBikes3.js';
 import Car from './Car.js';
@@ -535,7 +542,42 @@ const myfirstElement =
       In React, the <b>selected value</b> is defined with a <b>value</b> attribute on the <b>select</b> tag. <br />
     </p>
     <span>The output is:</span> <MyForm3 />
+    <br />
+    <p style={{fontSize:"28px", border:"1px solid white", borderRadius:"12px", padding:"10px", textAlign:"center"}}>
+      ##NOTE ## <br /> 
+      We are using the <b>useState</b> Hook to <u>keep track</u> of the Application.<br />
+      <b>State</b>, in general, refers to <b>application data or properties</b> that need to be tracked. <br />
+      Hooks can only be called inside React function components. <br />
+      Hooks can only be called at the top level of a component. <br />
+      Hooks cannot be conditional. <br />
+    </p>
+    <br />
+    <hr />
+    <h3>
+      React Router
+    </h3>
+    <p>
+      Add a React Router: To add React Router in our application, we need to run this in the terminal from the root directory of the application: <br />
+      <b>npm i -D react-router-dom</b>
+    </p>
+    
   </div>
 
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NoPages />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(myfirstElement);
+root.render(<App />);
