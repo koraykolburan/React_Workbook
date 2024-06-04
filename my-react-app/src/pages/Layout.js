@@ -5,14 +5,92 @@ const Layout = () => {
           <>
           <nav>
                <ul>
-                    <li style={{float:"left", padding:"15px", listStyleType:"none"}}>
-                         <Link to="/" style={{textDecoration:"none"}}>Home</Link>
+                    <li 
+                    style={{
+                         display:"inline-block", 
+                         padding:"5px", 
+                         listStyleType:"none",
+                         }}>
+                         <Link to="/" style={{
+                              textDecoration:"none",
+                              border:"1px solid black",
+                              borderRadius:"12px",
+                              color:"#e5e5e5",
+                              backgroundColor:"#15202B",
+                              padding:"15px"
+                              }}>
+                                   Home
+                         </Link>
                     </li>
-                    <li style={{float:"left", padding:"15px", listStyleType:"none"}}>
-                         <Link to="/blogs" style={{textDecoration:"none"}}>Blogs</Link>
+                    <li 
+                    style={{
+                         display:"inline-block", 
+                         padding:"5px", 
+                         listStyleType:"none"
+                         }}>
+                         <Link to="/Conditionals" 
+                              style={{
+                                   textDecoration:"none",
+                                   border:"1px solid black",
+                                   borderRadius:"12px",
+                                   color:"#e5e5e5",
+                                   backgroundColor:"#15202B",
+                                   padding:"15px"
+                              }}
+                         >
+                                   Conditionals & Rendering 
+                         </Link>
                     </li>
-                    <li style={{float:"left", padding:"15px", listStyleType:"none"}}>
-                         <Link to="/contact" style={{textDecoration:"none"}}>Contact</Link>
+                    <li 
+                    style={{
+                         display:"inline-block", 
+                         padding:"5px", 
+                         listStyleType:"none"
+                         }}>
+                         <Link to="/Props&Components" 
+                              style={{textDecoration:"none", border:"1px solid black",
+                                   borderRadius:"12px",
+                                   color:"#e5e5e5",
+                                   backgroundColor:"#15202B",
+                                   padding:"15px"
+                              }}
+                         >
+                         Props & Components
+                         </Link>
+                    </li>
+                    <li 
+                    style={{
+                         display:"inline-block", 
+                         padding:"5px", 
+                         listStyleType:"none"
+                         }}>
+                         <Link to="/ClassComponents" 
+                              style={{textDecoration:"none", border:"1px solid black",
+                                   borderRadius:"12px",
+                                   color:"#e5e5e5",
+                                   backgroundColor:"#15202B",
+                                   padding:"15px"
+                              }}
+                         >
+                         Class Components
+                         </Link>
+                    </li>
+                    <li 
+                    style={{
+                         display:"inline-block", 
+                         padding:"5px", 
+                         listStyleType:"none"
+                         }}>
+                         <Link to="/ReactEvents" 
+                              style={{textDecoration:"none", border:"1px solid black",
+                                   borderRadius:"12px",
+                                   color:"#e5e5e5",
+                                   backgroundColor:"#15202B",
+                                   padding:"15px"
+                              }}
+                         >
+                         React Events
+                         </Link>
                     </li>
                </ul>
           </nav>

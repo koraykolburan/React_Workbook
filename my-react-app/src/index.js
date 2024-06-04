@@ -3,9 +3,12 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from './pages/Layout.js';
 import Home from './pages/Home.js';
-import Blogs from './pages/Blogs.js';
-import Contact from './pages/Contact.js';
+import Conditionals from './pages/Conditionals.js';
+import PropsComponents from './pages/PropsComponents.js';
 import NoPages from './pages/NoPages.js';
+import ClassComponents from './pages/ClassComponents.js';
+import ReactEvents from './pages/ReactEvents.js';
+
 
 import Bike2 from './Bike2.js';
 import MyBikes3 from './MyBikes3.js';
@@ -19,21 +22,23 @@ import MyForm from './MyForm.js';
 import MyForm2 from './MyForm2.js';
 import MyForm3 from './MyForm3.js';
 
-const x = 5; //This is for Ternary Expressions in 
 const bikes = ['Canyon', 'Cannondale', 'Mosso']; // This is for Garage2 && And Logical operator
 
-const myfirstElement = 
-<div id="container2" style={{
-  padding: '50px',
-  lineHeight: '28px',
-  fontFamily: 'verdana',
-  fontSize:'15px',
-  backgroundColor:'#15202B',
-  color:"#e5e5e5"
-  }}>
+const MyFirstElement = 
+<div 
+  id="container2" 
+  style={{
+    padding: '50px',
+    lineHeight: '28px',
+    fontFamily: 'verdana',
+    fontSize:'15px',
+    backgroundColor:'#15202B',
+    color:"#e5e5e5"
+  }}
+>
 
   <h1>JS React!</h1> 
-  <h2>Using React, we render HTML in a web page in many ways.</h2>
+  {/* <h2>Using React, we render HTML in a web page in many ways.</h2>
   <h3>React renders HTML to the web page using a function called createRoot() and its method render().</h3>
   <ol>
     <li><b>The createRoot()</b></li>
@@ -61,8 +66,8 @@ const myfirstElement =
       root.render( p tag Hallo);
     </span>
   </ol>
-  <hr />
-  <h2>What is JSX?</h2>
+  <hr /> */}
+  {/* <h2>What is JSX?</h2>
   <h3>JavaScript XML</h3>
   <h3>JSX allows us to write HTML in React</h3>
   <h2>Coding JSX</h2>
@@ -121,8 +126,8 @@ const myfirstElement =
       When JSX is rendered, it translates <b>className</b> attributes into <b>class</b> attribute.
     </p>
     const myElement2 = <h3 className='myclass'>This is className example.</h3>
-    <hr />
-    {/* -------------------------------------  React Conditionals -------------------------------------  */}
+    <hr /> */}
+    {/* -------------------------------------  React Conditionals ------------------------------------- 
     <h2>Conditions - If Statements</h2>
     <p>
       We need to use <b>Ternary Expressions</b> instead of if statements in JSX. <br />
@@ -154,7 +159,7 @@ const myfirstElement =
         {"return <span>Hi, I'm a Bike!</span>;"}<br />
       {"}"}
     {"}"} </b>
-    </p>
+    </p> */}
     <h3>2) Function Component</h3>
     <p>
       We used the same example with the Class Component but created using a Function Component. <br />
@@ -569,8 +574,10 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="blogs" element={<Blogs />} />
-          <Route path="contact" element={<Contact />} />
+          <Route path="Conditionals" element={<Conditionals  />} />
+          <Route path="Props&Components" element={<PropsComponents />} />
+          <Route path='ClassComponents' element={<ClassComponents />} />
+          <Route path='ReactEvents' element={<ReactEvents />} />
           <Route path="*" element={<NoPages />} />
         </Route>
       </Routes>
@@ -580,4 +587,5 @@ export default function App() {
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(MyFirstElement);
 root.render(<App />);
