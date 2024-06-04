@@ -1,4 +1,4 @@
-const NoPage = () => {
+const NoPages = () => {
      return (
           <p
           style={{
@@ -10,11 +10,11 @@ const NoPage = () => {
                fontWeight:"bold"
           }}
           >
-          Sorry the page you are searching does not exist! <br />
+          Sorry the page you are searching for does not exist! <br />
           😔
           </p>
      ) 
           
 }
 
-export default NoPage;
+export default NoPages;
