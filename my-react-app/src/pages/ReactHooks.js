@@ -181,6 +181,12 @@ const ReactHooks = () => {
                               {"</>"} <br />
                          {")}"} <br />
                     </code>
+                    <p>
+                         We need to the <b>current value of state,</b> <br />
+                         that's why we pass a function named <b>{"previousState => {}"}</b> into our <b>setCar</b> function. <br />
+                         This function receives the <u>previous value</u>! <br />
+                         Then we return an object, <u>spreading</u> the <b>previousState</b> and <u>overwriting</u> only the color. <br />
+                    </p>
           </div>
      )
 }
