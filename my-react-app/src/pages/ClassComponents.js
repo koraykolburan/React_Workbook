@@ -22,8 +22,8 @@ const ClassComponents = () => {
                     And it gives our component <b>access</b> to React.Component's functions. <br />
                     The component also requires a <b>render()</b> method, this method return HTML. <br />
                     <br />
-                    <span style={{fontSize:'16px', color:'red', fontFamily:'monospace'}}>
-                    <b>
+                    <code style={{color:"#015CC5"}}>
+                    
                     {"class Car extends React.Component {"} <br/>
                     {"constructor() {"} <br/>
                     {"super(); "} <br/>
@@ -32,13 +32,13 @@ const ClassComponents = () => {
                     {"render() {"} <br/>
                     {"return <span>This is {this.state.color} BMW!</span>;"} <br/>
                     {"}}"} <br/>
-                    </b> <br />
+                    </code> <br />
                     This is for rendering: <br />
-                    <b>
+                    <code style={{color:"#015CC5"}}>
                     {"const root = ReactDOM.createRoot(document.getElementById('root'));"} <br />
                     {"root.render(<Car />)"} <br />
-                    </b> <br />
-                    </span>
+                    </code> <br />
+                    
                     If there is a <b>constructor()</b> function in our component, this function will be called when the components gets initiated. <br />
                     The <b>conctructor</b> function is where we initiate the component's properties. <br />
                     In React, component properties should be kept in an object called <b>state.</b>
@@ -54,27 +54,26 @@ const ClassComponents = () => {
                     <br /><br />
                     If we have a constructor function, the <b>props</b> always be passed to the constructor and also the React.Component via the <b>super()</b> method. <br />
                     <span style={{fontSize:'16px', color:'red', fontFamily:'monospace'}}>
-                    <b>
+                    <code style={{color:"#015CC5"}}>
                     {"class Car extends React.Component {"} <br/>
                     {"constructor(props) {"} <br/>
                     {"super(props); "} <br/>
                     {"render() {"} <br/>
                     {"return <span>This is {this.props.model} BMW!</span>;"} <br/>
                     {"}}"} <br/>
-                    </b> <br />
+                    </code> <br />
                     This is for rendering: <br />
-                    <b>
+                    <code style={{color:"#015CC5"}}>
                     {"const root = ReactDOM.createRoot(document.getElementById('root'));"} <br />
                     {"root.render(<Car model='i20'/>)"} <br />
-                    </b> <br />
+                    </code> <br />
                     </span>
                </p>
                <h3>Creating the state Object</h3>
                <p>
                     The state object can contain as many properties as we like: <br />
-                    Refet to the <b>state</b> object anywhere in the component by using the <b>this.state.propertyname</b> syntax: <br />
-               <span style={{fontSize:'16px', color:'red', fontFamily:'monospace'}}>
-                    <b>
+                    Refer to the <b>state</b> object anywhere in the component by using the <b>this.state.propertyname</b> syntax: <br />
+                    <code style={{color:"#015CC5"}}>
                     {"class Car extends React.Component {"} <br/>
                     {"constructor(props) {"} <br/>
                     {"super(props); "} <br/>
@@ -97,13 +96,13 @@ const ClassComponents = () => {
                     {"</button> "} <br/>
                     {"</div>"} <br/>
                     {")}}"} <br/>
-                    </b> <br />
+                    <br />
                     This is for rendering: <br />
                     <b>
                     {"const root = ReactDOM.createRoot(document.getElementById('root'));"} <br />
                     {"root.render(<Car model='i20'/>)"} <br />
                     </b> <br />
-                    </span>
+                    </code>
                </p>
                <h2>Lifecycle of Components</h2>
                <p>

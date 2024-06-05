@@ -21,7 +21,7 @@ const ReactEvents = () => {
           </p>
           <h3>Passing Arguments</h3>
           <span>To pass an argument to an event handler, use an arrow function:</span> <br />
-          <span>
+          <code style={{color:"#015CC5"}}>
           {"function Football() {"} <br />
           {" const shoot = (a) => {"} <br />
                {"alert(a);"} <br />
@@ -29,13 +29,13 @@ const ReactEvents = () => {
                {"return ("} <br />
                {"<button onClick={() => shoot('Goal!!!')}>Free Kick!</button>"} <br />
                {"); }"} <br />
-          </span>
+          </code>
           The output is: <Football />
           <h3>React Event Object</h3>
           <span>Event handlers have access to the React event that triggered the function.</span> <br />
           <span>In our Example below, the event is the "click" event.</span> <br />
           <span>Arrow function: sending the event object manually:</span> <br />
-          <span>
+          <code style={{color:"#015CC5"}}>
           {"function Football() {"} <br />
           {" const shoot = (a, b) => {"} <br />
                {"alert(b.type);"} <br />
@@ -44,7 +44,7 @@ const ReactEvents = () => {
                {"return ("} <br />
                {"<button onClick={(event) => shoot('Goal!!!', event)}>Free Kick!</button>"} <br />
                {"); }"} <br />
-          </span>
+          </code>
           <br />
           <Football /> 
           <br />

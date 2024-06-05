@@ -20,7 +20,7 @@ const ConditionalRendering = () => {
                In React, we can conditionally render components.<br />
                There are several ways to do this.<br />
                If statements:<br />
-               <b>
+               <code style={{color:"#015CC5"}}>
                {"function Login() {"} <br />
                {"return <h1>Welcome Your Profile!</h1>"} <br />
                {"}"} <br />
@@ -35,14 +35,14 @@ const ConditionalRendering = () => {
                {"return <Logout />;"} <br />
                {"}"} <br />
                {"(<Log isLogin={true} />"} <br />
-               </b>
+               </code>
           </p>
           <span>The output is:</span> <Log isLogin={true}/>
           <hr />
           <h3>Logical && Operator</h3>
           <p>
                Another way to conditionally render a React Component is by using the <b>&&</b> Operator. <br />
-               <b>
+               <code style={{color:"#015CC5"}}>
                {"function Garage2 (props) {"} <br />
                {"const bikes = props.bikes;"} <br />
                {"return ("} <br />
@@ -57,15 +57,15 @@ const ConditionalRendering = () => {
                <br />
                const bikes = ['Canyon', 'Cannondale', 'Mosso'];  <br />
                Render: {"<Garage2 bikes={bikes}/>"}
-               </b>
+               </code>
           </p>
           The output is gonna: <Garage2 bikes={bikes}/> <br />
           <hr />
           <h3>Ternary Operator </h3>
           <p>
                condition ? true : false <br />
-               We turned back to <b>Login and Logout</b> example:
-               <b>
+               We turned back to <b>Login and Logout</b> example: <br />
+               <code style={{color:"#015CC5"}}>
                {"function Login() {"} <br />
                {"return <h1>Welcome Your Profile!</h1>"} <br />
                {"}"} <br />
@@ -80,7 +80,7 @@ const ConditionalRendering = () => {
                {"</>;"} <br />
                {")}"} <br />
                {"(<Log isLogin={true} />"} <br />
-               </b>
+               </code>
           </p>
           The output (true) is: <Log isLogin={true} /> <br />
           OR the output (false) is: <Log isLogin={false} /> <br />

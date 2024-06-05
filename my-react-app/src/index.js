@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Layout from './pages/Layout.js';
 import Home from './pages/Home.js';
 import Conditionals from './pages/Conditionals.js';
@@ -13,6 +13,7 @@ import Lists from './pages/Lists.js';
 import Forms from './pages/Forms.js';
 import ReactRouter from './pages/ReactRouter.js';
 import ReactMemo from './pages/Memo.js';
+import ReactHooks from './pages/ReactHooks.js';
 
 
 export default function App() {
@@ -30,6 +31,7 @@ export default function App() {
           <Route path='Forms' element={<Forms />} />
           <Route path='ReactRouter' element={<ReactRouter />} />
           <Route path='ReactMemo' element={<ReactMemo />} />
+          <Route path='ReactHooks' element={<ReactHooks />} />
           <Route path="*" element={<NoPages />} />
           <Route path='NoPages' element={<NoPages />} />
         </Route>

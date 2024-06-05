@@ -63,6 +63,7 @@ const Home = () => {
           <p>
           If we want to write HTML on <b>multiple lines</b>, we need to put the HTML inside parentheses: <br />
           </p>
+          <code style={{color:"#015CC5"}}>
           const mySmoothie = (
                <ul>
                <li>Spaniach</li>
@@ -70,6 +71,7 @@ const Home = () => {
                <li>Parsley</li>
                </ul>
           );
+          </code>
           <p>
                If we want to <b>write TWO Paragraph</b>, we must put them inside a <b>parent element like a div:</b>
           </p>
