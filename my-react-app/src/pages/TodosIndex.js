@@ -15,6 +15,7 @@ const IncApp = () => {
           <hr />
           <div>
                Count: {count} 
+               &nbsp;&nbsp;&nbsp;
                <button onClick={increment}> + </button>
           </div>
           </>

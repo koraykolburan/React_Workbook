@@ -25,6 +25,11 @@ function FavoriteBike()  {
                     type="button"
                     onClick={() => setBrand("Allez")}
                >Allez</button>
+               &nbsp; &nbsp;
+               <button
+                    type="button"
+                    onClick={() => setBrand("Canyon")}
+               >Canyon</button>
           </>
      )
 }

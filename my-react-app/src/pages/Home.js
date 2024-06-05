@@ -12,7 +12,7 @@ const Home = () => {
                     // color:"#e5e5e5"
                }}
           >
-          <h1>JS React!</h1> 
+          <h1>JS React Documentation!</h1> 
           <h2>Using React, we render HTML in a web page in many ways.</h2>
           <h3>React renders HTML to the web page using a function called createRoot() and its method render().</h3>
           <ol>
@@ -75,22 +75,26 @@ const Home = () => {
           <p>
                If we want to <b>write TWO Paragraph</b>, we must put them inside a <b>parent element like a div:</b>
           </p>
-          const myBikes = (
+          <code style={{color:"#015CC5"}}>
+          const myBikes = ( <br />
                <div>
                <h2>Canyon</h2>
                <h2>Cannondale</h2>
                </div>
           )
+          </code>
           <p>
                Or we can use <b>"Fragment"</b> to wrap multiple lines. This will prevent unnecessarily adding extra nodes to the DOM. <br />
                A fragment is like this: <br />
           </p>
+          <code style={{color:"#015CC5"}}>
           const myBikes2 = (
                <>
                <p>This is my old bike.</p>
                <p>This is my new bike.</p>
                </>
           )
+          </code>
           <p>
                JSX follows XML rules, thus HTML elements must be properly closed like this: <br />
           </p>
