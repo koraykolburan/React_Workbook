@@ -1,4 +1,5 @@
 import Bike3 from './Bike3.js';
+import styles from './my-style.module.css';
 
 function Garage() {
      //const bikeName = 'Canyon';
@@ -9,8 +10,8 @@ function Garage() {
      }
      return (
           <>
-          <h2>Which Brands I have in my Garage?</h2>
-          <Bike3 brand={ bikeInfo } />
+          <h2 className={styles.bigblue}>Which Brands I have in my Garage?</h2>
+          <Bike3  brand={ bikeInfo } />
           </>
      )
 }

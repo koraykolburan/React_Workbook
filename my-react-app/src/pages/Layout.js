@@ -212,6 +212,24 @@ const Layout = () => {
                          margin:"30px 25px 0 0",  
                          listStyleType:"none"
                          }}>
+                         <Link to="/ReactStyling" 
+                              style={{textDecoration:"none", border:"1px solid black",
+                                   borderRadius:"12px",
+                                   color:"#e5e5e5",
+                                   backgroundColor:"#15202B",
+                                   padding:"15px"
+                              }}
+                         >
+                         React Styling 
+                         </Link>
+                    </li>
+                    <li 
+                    style={{
+                         display:"inline-block", 
+                         padding:"5px",
+                         margin:"30px 25px 0 0",  
+                         listStyleType:"none"
+                         }}>
                          <Link to="/NoPages" 
                               style={{textDecoration:"none", border:"1px solid black",
                                    borderRadius:"12px",

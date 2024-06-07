@@ -14,7 +14,8 @@ import Forms from './pages/Forms.js';
 import ReactRouter from './pages/ReactRouter.js';
 import ReactMemo from './pages/Memo.js';
 import ReactHooks from './pages/ReactHooks.js';
-
+import ReactStyling from './pages/ReactStyling.js';
+import './App.css';
 
 export default function App() {
   return (
@@ -32,6 +33,7 @@ export default function App() {
           <Route path='ReactRouter' element={<ReactRouter />} />
           <Route path='ReactMemo' element={<ReactMemo />} />
           <Route path='ReactHooks' element={<ReactHooks />} />
+          <Route path='ReactStyling' element={<ReactStyling />} />
           <Route path="*" element={<NoPages />} />
           <Route path='NoPages' element={<NoPages />} />
         </Route>

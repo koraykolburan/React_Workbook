@@ -3,16 +3,7 @@ import FavoriteBike from "../FavoriteBike";
 
 const ReactHooks = () => {
      return (
-          <div
-          style={{
-               padding: '50px',
-               lineHeight: '28px',
-               fontFamily: 'verdana',
-               fontSize:'15px',
-               // backgroundColor:'#15202B',
-               // color:"#e5e5e5"
-          }}
-          >
+          <div className="divStyle">
                <h1>React Hooks</h1>
                <p>
                     Hooks were a new addition in React 16.8. <br />
