@@ -15,7 +15,8 @@ import ReactRouter from './pages/ReactRouter.js';
 import ReactMemo from './pages/Memo.js';
 import ReactHooks from './pages/ReactHooks.js';
 import ReactStyling from './pages/ReactStyling.js';
-import './App.css';
+import './css/App.css';
+import './sass/my-sass.scss';
 
 export default function App() {
   return (

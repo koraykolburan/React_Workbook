@@ -1,0 +1,31 @@
+$myColor: purple;
+$myCode: #015cc5;
+$myWeight: bold;
+$myCursor: pointer;
+$myButtonWidth: 150px;
+$myButtonHeight: 50px;
+$myRadius: 12px;
+$myHoverFont: white;
+
+
+h1 {
+     color: $myColor;
+}
+
+code {
+     color: $myCode;
+     font-weight: $myWeight;
+}
+
+button {
+     height: $myButtonHeight;
+     width: $myButtonWidth;
+     border-radius: 12px;
+}
+
+button:hover {
+     cursor: $myCursor;
+     color: $myHoverFont;
+     background-color: $myColor;
+}
+

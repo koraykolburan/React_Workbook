@@ -12,7 +12,7 @@ const ReactHooks = () => {
                     This let us to provide a <u>single source of truth</u> for the entire application. <br />
                     <b>State</b> generally refers to application data or properties that need to be tracked. <br />
                     <br />
-                    <code style={{color:"#015CC5"}}>
+                    <code>
                          {"function FavoriteBike() { "} <br />
                               {"//Declare a new state variable, which we call 'count'"} <br />
                               {"const [brand, setBrand] = useState('Cannondale');"} <br />

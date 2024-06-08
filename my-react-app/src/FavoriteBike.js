@@ -5,7 +5,7 @@ function FavoriteBike()  {
 
      return (
           <>
-               <h1>My Favorite Bike is {brand}!</h1>
+               <h1>My Favorite Bike is <code>{brand}</code>!</h1>
                <button
                     type="button"
                     onClick={() => setBrand("Cannondale")}

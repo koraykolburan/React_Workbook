@@ -1,5 +1,5 @@
 import Bike3 from './Bike3.js';
-import styles from './my-style.module.css';
+import styles from './css/my-style.module.css';
 
 function Garage() {
      //const bikeName = 'Canyon';
