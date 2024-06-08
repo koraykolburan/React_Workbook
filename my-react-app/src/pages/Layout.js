@@ -4,7 +4,7 @@ const Layout = () => {
      return (
           <>
           <nav>
-               <ul>
+               <ul className="myUl">
                     <li 
                     style={{
                          display:"inline-block", 
@@ -12,14 +12,7 @@ const Layout = () => {
                          margin:"30px 25px 0 0", 
                          listStyleType:"none",
                          }}>
-                         <Link to="/" style={{
-                              textDecoration:"none",
-                              border:"1px solid black",
-                              borderRadius:"12px",
-                              color:"#e5e5e5",
-                              backgroundColor:"#15202B",
-                              padding:"15px"
-                              }}>
+                         <Link to="/" className="myLink">
                                    Home
                          </Link>
                     </li>
@@ -30,15 +23,7 @@ const Layout = () => {
                          margin:"30px 25px 0 0",  
                          listStyleType:"none"
                          }}>
-                         <Link to="/Conditionals" 
-                              style={{
-                                   textDecoration:"none",
-                                   border:"1px solid black",
-                                   borderRadius:"12px",
-                                   color:"#e5e5e5",
-                                   backgroundColor:"#15202B",
-                                   padding:"15px"
-                              }}
+                         <Link to="/Conditionals" className="myLink"
                          >
                                    Conditionals & Rendering 
                          </Link>
@@ -50,13 +35,7 @@ const Layout = () => {
                          margin:"30px 25px 0 0", 
                          listStyleType:"none"
                          }}>
-                         <Link to="/Props&Components" 
-                              style={{textDecoration:"none", border:"1px solid black",
-                                   borderRadius:"12px",
-                                   color:"#e5e5e5",
-                                   backgroundColor:"#15202B",
-                                   padding:"15px"
-                              }}
+                         <Link to="/Props&Components" className="myLink"
                          >
                          Props & Components
                          </Link>
@@ -68,13 +47,7 @@ const Layout = () => {
                          margin:"30px 25px 0 0", 
                          listStyleType:"none"
                          }}>
-                         <Link to="/ClassComponents" 
-                              style={{textDecoration:"none", border:"1px solid black",
-                                   borderRadius:"12px",
-                                   color:"#e5e5e5",
-                                   backgroundColor:"#15202B",
-                                   padding:"15px"
-                              }}
+                         <Link to="/ClassComponents" className="myLink"
                          >
                          Class Components
                          </Link>
@@ -86,13 +59,7 @@ const Layout = () => {
                          margin:"30px 25px 0 0",  
                          listStyleType:"none"
                          }}>
-                         <Link to="/ReactEvents" 
-                              style={{textDecoration:"none", border:"1px solid black",
-                                   borderRadius:"12px",
-                                   color:"#e5e5e5",
-                                   backgroundColor:"#15202B",
-                                   padding:"15px"
-                              }}
+                         <Link to="/ReactEvents" className="myLink"
                          >
                          React Events
                          </Link>
@@ -104,31 +71,21 @@ const Layout = () => {
                          margin:"30px 25px 0 0",  
                          listStyleType:"none"
                          }}>
-                         <Link to="/ConditionalRendering" 
-                              style={{textDecoration:"none", border:"1px solid black",
-                                   borderRadius:"12px",
-                                   color:"#e5e5e5",
-                                   backgroundColor:"#15202B",
-                                   padding:"15px"
-                              }}
+                         <Link to="/ConditionalRendering" className="myLink"
                          >
                          Conditional Rendering
                          </Link>
                     </li>
-                    <li 
+               </ul>
+               <ul className="myUl">
+               <li 
                     style={{
                          display:"inline-block", 
                          padding:"5px", 
                          margin:"30px 25px 0 0", 
                          listStyleType:"none"
                          }}>
-                         <Link to="/Lists" 
-                              style={{textDecoration:"none", border:"1px solid black",
-                                   borderRadius:"12px",
-                                   color:"#e5e5e5",
-                                   backgroundColor:"#15202B",
-                                   padding:"15px"
-                              }}
+                         <Link to="/Lists" className="myLink"
                          >
                          React Lists
                          </Link>
@@ -140,13 +97,7 @@ const Layout = () => {
                          margin:"30px 25px 0 0",  
                          listStyleType:"none"
                          }}>
-                         <Link to="/Forms" 
-                              style={{textDecoration:"none", border:"1px solid black",
-                                   borderRadius:"12px",
-                                   color:"#e5e5e5",
-                                   backgroundColor:"#15202B",
-                                   padding:"15px"
-                              }}
+                         <Link to="/Forms" className="myLink"
                          >
                          React Forms
                          </Link>
@@ -158,13 +109,7 @@ const Layout = () => {
                          margin:"30px 25px 0 0",  
                          listStyleType:"none"
                          }}>
-                         <Link to="/ReactRouter" 
-                              style={{textDecoration:"none", border:"1px solid black",
-                                   borderRadius:"12px",
-                                   color:"#e5e5e5",
-                                   backgroundColor:"#15202B",
-                                   padding:"15px"
-                              }}
+                         <Link to="/ReactRouter" className="myLink"
                          >
                          React Router
                          </Link>
@@ -176,14 +121,7 @@ const Layout = () => {
                          margin:"30px 25px 0 0",  
                          listStyleType:"none"
                          }}>
-                         <Link to="/ReactMemo" 
-                              style={{textDecoration:"none", border:"1px solid black",
-                                   borderRadius:"12px",
-                                   color:"#e5e5e5",
-                                   backgroundColor:"#15202B",
-                                   padding:"15px"
-                              }}
-                         >
+                         <Link to="/ReactMemo" className="myLink">
                          React Memo
                          </Link>
                     </li>
@@ -194,13 +132,7 @@ const Layout = () => {
                          margin:"30px 25px 0 0",  
                          listStyleType:"none"
                          }}>
-                         <Link to="/ReactHooks" 
-                              style={{textDecoration:"none", border:"1px solid black",
-                                   borderRadius:"12px",
-                                   color:"#e5e5e5",
-                                   backgroundColor:"#15202B",
-                                   padding:"15px"
-                              }}
+                         <Link to="/ReactHooks" className="myLink"
                          >
                          React Hooks
                          </Link>
@@ -212,13 +144,7 @@ const Layout = () => {
                          margin:"30px 25px 0 0",  
                          listStyleType:"none"
                          }}>
-                         <Link to="/ReactStyling" 
-                              style={{textDecoration:"none", border:"1px solid black",
-                                   borderRadius:"12px",
-                                   color:"#e5e5e5",
-                                   backgroundColor:"#15202B",
-                                   padding:"15px"
-                              }}
+                         <Link to="/ReactStyling" className="myLink"
                          >
                          React Styling 
                          </Link>
@@ -230,13 +156,7 @@ const Layout = () => {
                          margin:"30px 25px 0 0",  
                          listStyleType:"none"
                          }}>
-                         <Link to="/NoPages" 
-                              style={{textDecoration:"none", border:"1px solid black",
-                                   borderRadius:"12px",
-                                   color:"#e5e5e5",
-                                   backgroundColor:"#15202B",
-                                   padding:"15px"
-                              }}
+                         <Link to="/NoPages" className="myLink"
                          >
                          No Pages
                          </Link>

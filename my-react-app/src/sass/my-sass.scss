@@ -1,11 +1,23 @@
 $myColor: purple;
+$myColor2: #1E883E;
+$myColor3: #0d722c;
+$myColor4: #B029F9;
+$myColor5: #FFE0F0;
+$myWhite: white;
+$myBlack: black;
+$myNav: #282A35;
 $myCode: #015cc5;
 $myWeight: bold;
 $myCursor: pointer;
 $myButtonWidth: 150px;
 $myButtonHeight: 50px;
 $myRadius: 12px;
-$myHoverFont: white;
+$fSize: 17px;
+$fSize2: 20px;
+$myTextDec: none;
+$myBorder: 1px solid black;
+$myPadding: 15px;
+$myAlign: center;
 
 
 h1 {
@@ -20,12 +32,39 @@ code {
 button {
      height: $myButtonHeight;
      width: $myButtonWidth;
-     border-radius: 12px;
+     border-radius: $myRadius;
+     background-color: $myColor2;
+     color: $myWhite;
+     font-size: $fSize;
 }
 
 button:hover {
      cursor: $myCursor;
-     color: $myHoverFont;
-     background-color: $myColor;
+     color: $myWhite;
+     background-color: $myColor3;
 }
 
+.myLink {
+     text-decoration: $myTextDec;
+     border-radius: $myRadius;
+     padding: $myPadding;
+     background-color: $myNav;
+     color: $myWhite;
+     font-size: $fSize2;
+}
+
+.myLink:hover {
+     background-color: $myBlack;
+     color: $myWhite;
+}
+
+nav {
+     background-color: $myNav;
+     padding: $myPadding;
+     border-radius: $myRadius;
+     color: $myWhite;
+}
+
+.myUl {
+     text-align: $myAlign;
+}
