@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import FavoriteBike from "../FavoriteBike";
 import Car2 from '../Car2';
 import Timer from "../SetTimeOut";
 import Counter from "../SetCalculation";
+import Component1 from "../Context";
 
 const ReactHooks = () => {
      return (
@@ -208,16 +209,137 @@ const ReactHooks = () => {
                     If we don't do this, component keep renders at every second. <br />
                     The output is:
                </p>
-               <Timer /> <br />
+               <Timer /> <br /> <hr />
+               <p>
+                    Make a Counter using <b>useEffect dependencies</b> which is optional parameter.
+               </p>
+               <code>
+                    {"import { useState, useEffect } from 'react'; "} <br />
+                    {"function Counter(){"} <br />
+                    {"const [count, setCounter] = useState(0);"} <br />
+                    {"const [calculation, setCalculating] = useState(0);"} <br /> <br />
+                    {"useEffect(() => {"} <br />
+                    {"setCalculation(() => count * 2);"} <br />
+                    {"}, [count] //add the count variable here"} <br />
+                    {"return("} <br />
+                    {"<>"} <br />
+                    {"<p>Count: {count}</p>"} <br />
+                    {"<button onClick={() => setCount((c) => c + 1)}>+</button>"} <br />
+                    {"<p>Calculation: {calculation}</p>"} <br />
+                    {"</>"} <br />
+               </code> <br />
+               <span>The output is:</span>
 
                <Counter />
+               <hr />
 
                <h2>Effect Cleanup</h2>
                <p>
                     Some effects require cleanup to reduce memory leaks. <br />
-                    Timeouts, subscriptions, event listeners, and other effects that are no longer needed should be disposed. <br />
-                    We do this by including a return function at the end of the <b>useEffect</b> Hook.
+                    <u>Timeouts</u>, <u>subscriptions</u>, <u>event listeners</u>, and other effects that are no longer needed should be disposed. <br />
+                    We do this by including a <code><u>return function</u></code> at the end of the <b>useEffect</b> Hook. <br />
+                    We initialized a <code>let timer =</code>. <br />
+                    And then, we returned <code>{"return () => clearTimeout(timer)"}</code> before the display/main return.
                </p>
+               <code>
+                    {"function Timer() {"}
+                         {"const [count, setCount] = useState(0);"} <br />
+                         {"useEffect(() => {"} <br />
+                         {"let timer = setTimeout(() => {"} <br />
+                         {"setCount((count) => count + 1"} <br />
+                    {"}, 1000);"} <br />
+                    {"return () => clearTimeout(timer)"} <br />
+                    {"}, []);"} <br />
+                    {"return <h1>I've rendered {count} times!</h1>"} <br />
+                    {"}"} <br />
+               </code> <br /> 
+               <hr/>
+               <h1>React Context</h1>
+               <p>
+                    React Context is a way to manage state globally. <br />
+                    State should be held by the highest parent component in the stack that requires access to the state. <br />
+                    We have many nested components. The component at the top and bottom of the stack need access to the state.. <br />
+                    To do this without Context, we will need to pass the state as "props" through each nested component. This is caled <u>"prop drilling."</u> <br />
+               </p>
+               <code>
+                    {"import { useState } from 'react';"} <br /><br />
+                    {"function Component1() {"} <br />
+                    {"const [user, setUser] = useState('person1');"} <br /><br />
+                    {"return ("} <br />
+                    {"<>"} <br />
+                    {"<h1>{`Hello ${user}!`}</h1>"} <br />
+                    {"<Component2 user={user} />"} <br />
+                    {"</>"} <br />
+                    {");}"} <br /><br />
+                    {"function Component2({ user }) {"} <br />
+                    {"return ("} <br />
+                    {"<>"} <br />
+                    {"<h1>Component 2</h1>"} <br />
+                    {"<Component3 user={user} />"} <br />
+                    {"</>"} <br />
+                    {");}"} <br /><br />
+                    {"function Component3({ user }) {"} <br />
+                    {"return ("} <br />
+                    {"<>"} <br />
+                    {"<Component4 user={user} />"} <br />
+                    {"</>"} <br />
+                    {");}"} <br /><br />
+                    {"function Component4({ user }) {"} <br />
+                    {"return ("} <br />
+                    {"<>"} <br />
+                    {"<Component5 user={user} />"} <br />
+                    {"</>"} <br />
+                    {");}"} <br /><br />
+                    {"function Component5({ user }) {"} <br />
+                    {"return ("} <br />
+                    {"<>"} <br />
+                    {"<h1>Component5</h1>"} <br />
+                    {"<h2>{`Hello ${user} again!`}</h2>"} <br />
+                    {"</>"} <br />
+                    {");}"} <br /><br />
+               </code>
+               <span>The output is:</span>
+               <Component1 />
+               <br />
+               <p>
+                    Even though, components 4 did not need the state, they had to pass the state along so that it could reach component5. <br />
+                    The solution is to create context. <br />
+                    Firstly, <code>{"import { useState, createContext } from 'react';"}</code> <br />
+                    Secondly, initialize: <code>const UserContext = createContext()</code>
+                    Next, we'll use the Context Provider to wrap the tree of components that need the State Context. <br />
+               </p>
+               <h2>Context Provider</h2>
+               <span>Wrap child components in the Context Provider and supply the state value.</span> <br />
+               <code>
+                    {"function Component1() {"} <br />
+                         {"const [user, setUser] = useState('First Person');"} <br />
+                         {"return ("} <br />
+                         {"<UserContext.Provider value={user}>"} <br />
+                         {"<h1>{`Hello ${user}!`}</h1>"} <br />
+                         {"<Component2 user={user} />"} <br />
+                         {"</UserContext.Provider>"} <br />
+                    {");}"}
+               </code>
+               <span>Now, all components in this tree will have access to the user Context.</span> <br />
+               <h2>Use the <b>UseContext</b> Hook</h2>
+               <p>
+                    In order to use the Context in a child component, we need to access it using the <code>useContext</code> Hook. <br />
+                    Firstly, we need to include the <code>UseContext</code> in the import statement. <br />
+                    <code>{"import { useState, createContext, useContext } from 'react';"}</code> <br />
+                    Then, we can access the user Context in <u>all components:</u> <br />
+               </p>
+               <code>
+                    {"function Component4() {}"} <br />
+                    {"const user = useContext(UserContext);"} <br /> <br />
+                    {"return ("} <br />
+                    {"<>"} <br />
+                    {"<h1>Component4</h1>"} <br />
+                    {"<h2>{`Hello ${user} again!!`}</h2>"} <br />
+                    {"</>"} <br />
+                    {");}"} <br />
+               </code>
+               <hr />
+               
           </div>
      )
 }
