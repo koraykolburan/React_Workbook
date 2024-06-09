@@ -4,6 +4,7 @@ import Car2 from '../Car2';
 import Timer from "../SetTimeOut";
 import Counter from "../SetCalculation";
 import Component1 from "../Context";
+import App from "../UseRef";
 
 const ReactHooks = () => {
      return (
@@ -337,9 +338,49 @@ const ReactHooks = () => {
                     {"<h2>{`Hello ${user} again!!`}</h2>"} <br />
                     {"</>"} <br />
                     {");}"} <br />
-               </code>
+               </code> <br />
+               <span>The output is changed, above.</span>
                <hr />
-               
+               <h1>React <b>useRef</b> Hook</h1>
+               <p>
+                    The <code>useRef</code> Hook allows us to persist values between renders. <br />
+                    It can be used to store <u>a mutable value</u> that does not cause a re-render when updated. <br />
+                    <b>It can be used to access a DOM element directly.</b> <br />
+                    Does not cause Re-Renders <br />
+                    If we tried to count how many times our application renders using the <code>useState</code> Hook, <br />
+                    we would be caught in an infinite loop since this Hook itself causes re-render. <br />
+                    To avoid this, we can use the <code>useRef</code> Hook.
+               </p>
+               <code>
+                    {"import { useState, useEffect, useRef } from 'react';"} <br /> <br />
+                    {"function App() {"} <br />
+                    {"const [inputValue, setInputValue] = useState('');"} <br /> <br />
+                    {"const count = useRef(0)"} <br /> <br />
+                    {"useEffect(() => {"} <br />
+                    {"count.current = count.current + 1;"} <br />
+                    {"});"} <br /><br />
+                    {"return ("} <br />
+                    {"<>"} <br />
+                    {"<input "} <br />
+                    {"type='text'"} <br />
+                    {"value={inputValue}"} <br />
+                    {"onChange={(e) => setInputValue(e.target.value)}"} <br />
+                    {"/>"} <br />
+                    {"<h1>Render Count: {count.current}</h1>"} <br />
+                    {"</>"} <br />
+                    {");"} <br />
+                    {"}"} <br />
+               </code>
+               <span>Write something in here:</span>
+               <App /> <br />
+
+               <h2>Accessing DOM Elements</h2>
+               <p>
+                    Generally, we want to let React handle all DOM manipulation. <br />
+                    However, there are some instances where <code>useRef</code> can be used without causing issues. <br />
+                    In React, we can add a <code>ref</code> attribute to an element to access it directly in the DOM. <br />
+                    
+               </p>
           </div>
      )
 }
