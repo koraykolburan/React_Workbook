@@ -7,6 +7,7 @@ import Component1 from "../Context";
 import App from "../UseRef";
 import App2 from "../UseRef2";
 import App3 from "../UseRef3";
+import Todos from "../UseReducer";
 
 const ReactHooks = () => {
      return (
@@ -434,6 +435,22 @@ const ReactHooks = () => {
                     The output is:
                </span>
                <App3 />
+               <br />
+               <hr />
+               <h1>React useREducer Hook</h1>
+               <p>
+                    The <code>useReducer</code> is used to <b>store and update states</b> just like the <code>useState</code> Hook. <br />
+                    It returns an array that holds the current state value and dispatch function to which we can pass an action and later invoke it. <br />
+                    The <code>useReducer</code> Hook accepts two arguments. <code>{"useReducer(<reducer>,<initialState)"}</code> <br />
+                    The reducer function contains our custom state logic and the <b>initialState</b> can be a simple vaue but in general will contain an <b>Object.</b> <br />
+                    The <code>useReducer</code> Hook returns the current <b>state</b> and a <b>dispatch</b> method. <br /><br />
+                    When should we use <code>useReducer</code> in React? <br />
+                    When we have multiple pieces of state that depend on each other or on complex logic. <br />
+                    For example: if we need to <u>update several state variables together</u> or perform calculations based on the stage changes.
+               </p>
+
+               <span>The output is:</span>
+               <Todos />
           </div>
      )
 }
