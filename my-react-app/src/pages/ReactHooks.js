@@ -5,6 +5,8 @@ import Timer from "../SetTimeOut";
 import Counter from "../SetCalculation";
 import Component1 from "../Context";
 import App from "../UseRef";
+import App2 from "../UseRef2";
+import App3 from "../UseRef3";
 
 const ReactHooks = () => {
      return (
@@ -373,7 +375,7 @@ const ReactHooks = () => {
                </code>
                <span>Write something in here:</span>
                <App /> <br />
-
+               <hr />
                <h2>Accessing DOM Elements</h2>
                <p>
                     Generally, we want to let React handle all DOM manipulation. <br />
@@ -381,6 +383,57 @@ const ReactHooks = () => {
                     In React, we can add a <code>ref</code> attribute to an element to access it directly in the DOM. <br />
                     
                </p>
+               <code>
+                    {"import { useRef } from 'react';"} <br />
+                    {"function App2(){"} <br />
+                    {"const inputElement = useRef();"} <br /><br />
+                    {"const focusInput = () => {"} <br />
+                    &nbsp;{"inputElement.current.focus(); "} <br />
+                    {"};"} <br /><br />
+                    {"return("} <br />
+                    {"<>"} <br />
+                    &nbsp;{"<input type='text' ref={inputElement} />"} <br />
+                    &nbps;{"<button onClick={focusInput}"} <br />
+                    {""} <br />
+                    {""} <br />
+               </code>
+               <span>
+                    When we clicked the Button, the input field will get focus. <br />
+                    The output is:
+               </span> <br />
+               <App2 /> <br />
+               <hr />
+               <h2>Tracking State Changes</h2>
+               <p>
+                    The <b>useRef</b> Hook can also be used to <u>track of previous state</u> values. <br />
+                    This is because we are able to persist <code>useRef</code> values between renders. <br />
+               </p>
+               <code>
+                    {"import { useState, useEffect, useRef} from 'react';"} <br />
+                    {"function App3(){"} <br />
+                    {"const [inputValue, setInputValue] = useState('');"} <br />
+                    {"const previousInputValue = useRef('');"} <br /><br />
+                    {"useEffect(() => {"} <br />
+                    {"previousInputValue.current = inputValue;"} <br />
+                    {"}, [inputValue]);"} <br /><br />
+                    {"return ("} <br />
+                    {"<>"} <br />
+                    {"<input"} <br />
+                    {"type='text'"} <br />
+                    {"value={inputValue}"} <br />
+                    {"onChange={(e) => setInputValue(e.target.value)}"} <br />
+                    {"/>"} <br />
+                    {"<h2>Current Value: {inputValue}</h2>"} <br />
+                    {"<h2>Previous Value: {previousInputValue.current}</h2>"} <br />
+                    {"</>"} <br />
+                    {");}"} <br />
+               </code>
+               <span>
+                    While we writing in the input field and we will see the current-and previous values. <br />
+                    In the <code>useEffect</code>, we are updating the <code>useRef</code> current value each time the <code>inputValue</code> is updated by entering text into the input field. <br />
+                    The output is:
+               </span>
+               <App3 />
           </div>
      )
 }
