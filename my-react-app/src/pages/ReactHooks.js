@@ -11,6 +11,7 @@ import Todos from "../UseReducer";
 import Profile from "../ImgEx";
 import ShoppingList from "../RenderingLists";
 import MyApp from "../UseStateApp";
+import MyApp2 from "../UseStateApp2";
 
 const ReactHooks = () => {
      return (
@@ -101,6 +102,14 @@ const ReactHooks = () => {
                </p>
                <span>Example of Counters that update separately buttons:</span>
                <MyApp />
+               <span>
+                    Often we'll need components to <i>share data and always update together.</i> <br />
+                    To make both <b>MyButton</b> components display the same <b>count</b> and update together, we need to <b>move the state from the individual button 'upwards' to the closest component containing all of them.</b> <br />
+                    ##NOTE## -- The information we pass down like this is called <b>props.</b> <br />
+                    <code>{"<MyButton count={count} onClick={handleClick} />"}</code> <br />
+                    Now, when we click either button, the <b>count</b> in MyApp2 will change, which will both of the counts in <b>MyButton.</b><br />
+               </span>
+               <MyApp2 />
                <hr />
                <h2>Update State</h2>
                <p>
