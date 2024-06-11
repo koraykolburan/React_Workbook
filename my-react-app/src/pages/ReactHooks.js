@@ -8,18 +8,28 @@ import App from "../UseRef";
 import App2 from "../UseRef2";
 import App3 from "../UseRef3";
 import Todos from "../UseReducer";
+import Profile from "../ImgEx";
+import ShoppingList from "../RenderingLists";
+import MyApp from "../UseStateApp";
 
 const ReactHooks = () => {
      return (
           <div className="divStyle">
                <h1>React Hooks</h1>
+               <ul>
+                    <li><b>Functions start with <u>use</u> are called Hooks.</b></li>
+                    <li><code>useState</code> is a built-in Hook provided by React.</li>
+                    <li>We can also write our own Hooks by combining the existing ones.</li>
+                    <li>Hooks are more restrictive than other functions.</li>
+                    <li>We can call Hooks at the top of our components(or other Hooks).</li>
+                    <li>If we want to use <code>useState</code> in a condition or a loop, extract a new component and put it there.</li>
+                    <li>Hooks were a new addition in React 16.8.</li>
+                    <li>They let us use <b>state</b> and other React Features and Lifecycle methods without wiriting a class. </li>
+                    <li>We can use the <b>useState</b> Hook to Keep Track of each application states, like <b>inputs values</b>.</li>
+                    <li>This let us to provide a <u>single source of truth</u> for the entire application.</li>
+                    <li><b>State</b> generally refers to application data or properties that need to be tracked.</li>
+               </ul>
                <p>
-                    Hooks were a new addition in React 16.8. <br />
-                    They let us use <b>state</b> and other React Features and Lifecycle methods without wiriting a class. <br />
-                    We can use the <b>useState</b> Hook to Keep Track of each application states, like <b>inputs values</b>. <br />
-                    This let us to provide a <u>single source of truth</u> for the entire application. <br />
-                    <b>State</b> generally refers to application data or properties that need to be tracked. <br />
-                    <br />
                     <code>
                          {"function FavoriteBike() { "} <br />
                               {"//Declare a new state variable, which we call 'count'"} <br />
@@ -52,13 +62,14 @@ const ReactHooks = () => {
                <hr />
                <h1>React useState Hook</h1>
                <p>
-                    The react useState Hook allows us to <b>track state</b> in a function component. <br />
-                    Staten generally <u>refers to data or properties</u> that need to be tracking in an application. <br />
-                    At the top of our component, we need to <b>import</b> the <b>useState</b> Hook. <br />
+                    Tracking the state. <br />
+                    Sometimes, we'll want our component to 'remember' some information and display it. <br />
+                    Such as, maybe we can want to count the number of times a button is clicked. <br />
+                    To do this, add state to our component. <br />
+                    After we import <code>{"import { useState } from 'react'; "}</code> <br />
+                    We can declare a <b>state variable inside our component.</b> <br />
+                    <code>{"const [something, setSomething]"}</code> <br />
                </p>
-               <code >
-                    {"import { useState } from 'react';"} <br />
-               </code>
                <p>
                     We are destructuring <b>useState</b> from <b>react</b> as it is a named export. <br />
                     <code>
@@ -88,6 +99,8 @@ const ReactHooks = () => {
                          {"}"} <br />
                     </code>
                </p>
+               <span>Example of Counters that update separately buttons:</span>
+               <MyApp />
                <hr />
                <h2>Update State</h2>
                <p>
@@ -441,16 +454,30 @@ const ReactHooks = () => {
                <p>
                     The <code>useReducer</code> is used to <b>store and update states</b> just like the <code>useState</code> Hook. <br />
                     It returns an array that holds the current state value and dispatch function to which we can pass an action and later invoke it. <br />
-                    The <code>useReducer</code> Hook accepts two arguments. <code>{"useReducer(<reducer>,<initialState)"}</code> <br />
+                    The <code>useReducer</code> Hook accepts two arguments. <code>{"useReducer(<reducer>,<initialState>)"}</code> <br />
                     The reducer function contains our custom state logic and the <b>initialState</b> can be a simple vaue but in general will contain an <b>Object.</b> <br />
                     The <code>useReducer</code> Hook returns the current <b>state</b> and a <b>dispatch</b> method. <br /><br />
                     When should we use <code>useReducer</code> in React? <br />
                     When we have multiple pieces of state that depend on each other or on complex logic. <br />
                     For example: if we need to <u>update several state variables together</u> or perform calculations based on the stage changes.
                </p>
+               <code>
+
+               </code>
 
                <span>The output is:</span>
                <Todos />
+
+               <hr />
+               <p>
+                    An example of images in React.
+               </p>
+               <Profile />
+               <hr />
+               <span>An example of rendering list items</span>
+               <ShoppingList />
+               <hr />
+
           </div>
      )
 }
