@@ -499,6 +499,11 @@ const ReactHooks = () => {
                          optional <code>init:</code> The initializer function that should return the initial state. <br />
                          If it's not specified, the initial 
                     </li>
+                    <li>
+                         useReducer returns an array with exactly two values: <br />
+                         1) The current state. During the first render, it's set to <b>init(initialArg) or initialArg</b> <br />
+                         2) The <code>dispatch</code> function that lets us to update the state to a different value and trigger a re-render.
+                    </li>
                </ul>
 
                <span>The output is:</span>
