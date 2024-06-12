@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useReducer, useState } from "react";
 import FavoriteBike from "../FavoriteBike";
 import Car2 from '../Car2';
 import Timer from "../SetTimeOut";
@@ -104,7 +104,8 @@ const ReactHooks = () => {
                <MyApp />
                <span>
                     Often we'll need components to <i>share data and always update together.</i> <br />
-                    To make both <b>MyButton</b> components display the same <b>count</b> and update together, we need to <b>move the state from the individual button 'upwards' to the closest component containing all of them.</b> <br />
+                    To make both <b>MyButton</b> components display the same <b>count</b> and update together,
+                     we need to <b>move the state from the individual button 'upwards' to the closest component containing all of them.</b> <br />
                     ##NOTE## -- The information we pass down like this is called <b>props.</b> <br />
                     <code>{"<MyButton count={count} onClick={handleClick} />"}</code> <br />
                     Now, when we click either button, the <b>count</b> in MyApp2 will change, which will both of the counts in <b>MyButton.</b><br />
@@ -453,7 +454,8 @@ const ReactHooks = () => {
                </code>
                <span>
                     While we writing in the input field and we will see the current-and previous values. <br />
-                    In the <code>useEffect</code>, we are updating the <code>useRef</code> current value each time the <code>inputValue</code> is updated by entering text into the input field. <br />
+                    In the <code>useEffect</code>, we are updating the <code>useRef</code> current value each time the
+                     <code>inputValue</code> is updated by entering text into the input field. <br />
                     The output is:
                </span>
                <App3 />
@@ -461,18 +463,43 @@ const ReactHooks = () => {
                <hr />
                <h1>React useREducer Hook</h1>
                <p>
-                    The <code>useReducer</code> is used to <b>store and update states</b> just like the <code>useState</code> Hook. <br />
-                    It returns an array that holds the current state value and dispatch function to which we can pass an action and later invoke it. <br />
-                    The <code>useReducer</code> Hook accepts two arguments. <code>{"useReducer(<reducer>,<initialState>)"}</code> <br />
-                    The reducer function contains our custom state logic and the <b>initialState</b> can be a simple vaue but in general will contain an <b>Object.</b> <br />
-                    The <code>useReducer</code> Hook returns the current <b>state</b> and a <b>dispatch</b> method. <br /><br />
-                    When should we use <code>useReducer</code> in React? <br />
-                    When we have multiple pieces of state that depend on each other or on complex logic. <br />
-                    For example: if we need to <u>update several state variables together</u> or perform calculations based on the stage changes.
+                    <code>useReducer</code> is very similar to <code>useState</code>, however it lets us move the state update logic from event handlers into a single function outside of our component. <br />
+                    Then we need to fill in the code that will calculate and return the next state. <br />
+                    By <b>convention,</b> it is common to write it as <b>switch statement</b>. <br />
+                    For each <b>case</b> in the <b>switch</b>, calculate and return some next state.
                </p>
+               <ul>
+                    <li>useReducer is a React hook that lets us add a reducer to our component.</li>
+                    <li><code>const [state, dispatch] = useReducer(reducer, initialArg, init?)</code></li>
+                    <li>Adding a reducer to a component</li>
+                    <li>Writing the reducer function</li>
+                    <li>Avoiding recreating the initial state</li>
+                    <li></li>
+               </ul>
                <code>
-
+                    {"import { useReducer } from 'react';"} <br /><br />
+                    {"function reducer(state, action) {"} <br />
+                         {"//..."} <br />
+                    {"}"} <br /><br />
+                    {"function MyComponent() {"} <br />
+                    {"const [state, dispatch] = useReducer(reducer, { age: 42 });"} <br />
+                    {"}"} <br />
+                    {"}"} <br />
                </code>
+               <h3>Parameters:</h3>
+               <ul>
+                    <li>
+                         <code>reducer:</code> The reducer function that specifies how the state gets updated. <br />It must be pure, should take the state and action as arguements, and should return the next state. State and action can be of any types.
+                    </li>
+                    <li>
+                         <code>initialArg:</code>The value from which the initial state is calculated. <br />
+                         It can be a value of any type. How the initial state is calculated from it depends on the next <code>init</code> argument.
+                    </li>
+                    <li>
+                         optional <code>init:</code> The initializer function that should return the initial state. <br />
+                         If it's not specified, the initial 
+                    </li>
+               </ul>
 
                <span>The output is:</span>
                <Todos />
