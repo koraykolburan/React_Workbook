@@ -504,7 +504,26 @@ const ReactHooks = () => {
                          1) The current state. During the first render, it's set to <b>init(initialArg) or initialArg</b> <br />
                          2) The <code>dispatch</code> function that lets us to update the state to a different value and trigger a re-render.
                     </li>
+                    <li>
+                         useReducer is a Hook, so we can only call it at the top level of our component or our own Hooks. We can't call it inside loops or conditions. <br />
+                         If we need that, extract a new component and move the state into it.
+                    </li>
+                    <li>
+                         In strict mode, React will call our reducer and initializer twice in order to help us to find accidental impurities. <br />
+                         This is development-only behaviour and does not affect production. If our reducer and initializer are pure(as they should be), this should not affect our logic. <br />
+                         The result from one of the calls is ignored.
+                    </li>
                </ul>
+               <code>dispatch</code> function: <br />
+               <span>
+                    The dispatch function returned by useReducer let us update the state to a different value and trigger a re-render. <br />
+                    We need to pass the action as the only argument to the <b>dispatch</b> function:<br />
+               </span><br />
+               <code>
+                    {"const [state, dispatch] = useReducer(reducer, { age: 39 });"} <br /><br />
+                    {"function handleClick() {"} <br />
+                    {"dispatch({ type: 'incremented_age' });"} <br />
+               </code><br />
 
                <span>The output is:</span>
                <Todos />
