@@ -524,10 +524,17 @@ const ReactHooks = () => {
                     {"function handleClick() {"} <br />
                     {"dispatch({ type: 'incremented_age' });"} <br />
                </code><br />
+               <p>
+                    ##NOTEs## -- The dispatch function only <b>updates the state variable for the next render.</b> <br />
+                    If we read the state variable after calling the dispatch function, we will still get the old value that was on the screen before we call. <br />
+
+               </p>
 
                <span>The output is:</span>
                <Todos />
-
+               <span>
+                    <b>We will going deeper later on.</b>
+               </span>
                <hr />
                <p>
                     An example of images in React.
@@ -537,7 +544,29 @@ const ReactHooks = () => {
                <span>An example of rendering list items</span>
                <ShoppingList />
                <hr />
+               <h1>React useCallBack Hook</h1>
+               <p>
+                    The react <code>useCallBack</code> Hook returns a memoized callback function. <br />
+                    The <b>memoization</b> as caching a value so that it does not need to be recalculated. <br />
+                    This allows us to isolate resource intensive functions so that they will not automatically run on every render. <br />
+                    The <b>useCallBack</b> Hook only runs when one of its dependencies update. This can improve performance. <br />
+                    <i>The <code>useCallBack</code> and <code>useMemo</code> Hooks are similar.</i>
+                    <i>The main difference is that <code>useMemo</code> <b>returns a memoized value</b> and <code>useCallBack</code> <b>returns a memoized function</b>.</i> <br />
+                    <i>The main reason is to use <code>useCallBack</code> is to prevent a component from re-rendering unless its props have changed.</i> <br />
+               </p>
+               <code>
 
+               </code>
+               <p>
+               The <i><b>"referential equality"</b></i>: every time a component re-renders, its functions get recreated. Because of this, the <code>addToDo</code> function has actually changed.<br />
+               </p>
+               <code>
+
+               </code>
+               <p>
+               So fix this, we can use <code>useCallBack</code> hook to prevent the function from being recreated unless unnecessary. <br />
+                    Use the <code>useCallBack</code> Hook to prevent the <code>Todos</code> component from re-rendering needlessly.
+               </p>
           </div>
      )
 }
