@@ -12,6 +12,8 @@ import Profile from "../ImgEx";
 import ShoppingList from "../RenderingLists";
 import MyApp from "../UseStateApp";
 import MyApp2 from "../UseStateApp2";
+import App4 from "../UseCallback";
+import App5 from "../UseMemo";
 
 const ReactHooks = () => {
      return (
@@ -553,19 +555,59 @@ const ReactHooks = () => {
                     <i>The <code>useCallBack</code> and <code>useMemo</code> Hooks are similar.</i>
                     <i>The main difference is that <code>useMemo</code> <b>returns a memoized value</b> and <code>useCallBack</code> <b>returns a memoized function</b>.</i> <br />
                     <i>The main reason is to use <code>useCallBack</code> is to prevent a component from re-rendering unless its props have changed.</i> <br />
-               </p>
-               <code>
-
-               </code>
-               <p>
-               The <i><b>"referential equality"</b></i>: every time a component re-renders, its functions get recreated. Because of this, the <code>addToDo</code> function has actually changed.<br />
-               </p>
-               <code>
-
-               </code>
-               <p>
-               So fix this, we can use <code>useCallBack</code> hook to prevent the function from being recreated unless unnecessary. <br />
+                    The <i><b>"referential equality"</b></i>: every time a component re-renders, its functions get recreated. Because of this, the <code>addToDo</code> function has actually changed.<br />
+                    So fix this, we can use <code>useCallBack</code> hook to prevent the function from being recreated unless unnecessary. <br />
                     Use the <code>useCallBack</code> Hook to prevent the <code>Todos</code> component from re-rendering needlessly.
+               </p>
+
+               <code>
+                    {"import { useState, useCallBack } from 'react';"}; <br /><br />
+                    {"const App4 = () => {"}; <br />
+                    {"const [count, setCount] = useState(0)"}; <br />
+                    {"const [todos, setTodos] = useState([])"}; <br /><br />
+                    {"const increment = () => {"}; <br />
+                    {"setCount ((c) => c + 1);"}; <br />
+                    {"};"}; <br />
+                    <u>{"const AddTodo = useCallback(() => {)"}; </u><br />
+                    {"setTodos((t) => [...t, 'New Todo']);"}; <br />
+                    {"}, [todos]"}; <br /><br />
+                    {"return ("}; <br />
+                    {"<>"}; <br />
+                    {"<Todos todos={todos} addTodo={addTodo} />"}; <br />
+                    {"<hr />"}; <br />
+                    {"<div>"}; <br />
+                    {"Count: {count}"}; <br />
+                    {"<button onClick={increment}> + </button>"}; <br />
+                    {"</div>"}; <br />
+                    {"</>"}; <br />
+                    {")};"}; <br />
+               </code>
+
+               <span>the output is:</span>
+               <App4 />
+               <br />
+               <hr />
+               <h1>React useMemo Hook</h1>
+               <p>
+                    The React useMemo Hook returns a memoized value. <br />
+                    Think of memoization as caching a value so that it does not need to be calculated <br />
+                    The useMemo Hook <u>only runs when one of its dependencies update.</u> <br />
+                    This can improve performance.  <br />
+                    The <code>useMemo</code> and <code>useCallback</code> Hooks are similar. <br />
+                    The main difference is that <code>useMemo</code> returns a memozied value and <code>useCallback</code> returns a memoized function. <br />
+                    The <code>useMemo</code> Hook can be used to keep expensive, resource intensive functions from needlessly running. <br />
+               </p>
+               <span>
+                    The output is:
+               </span>
+               <App5 />
+               <p>
+                    To fix this performance issue, we used to <code>useMemo</code> Hook to memoizethe <code>expensiveCalculation</code> function. <br />
+                    This will cause the function to only run when needed. <br />
+                    We can wrap the expensive function call with <code>useMemo</code>.
+                    The <code>useMemo</code> Hook accepts a <u>second parameter to declare dependencies.</u> <br />
+                    The expensive function will only run when its dependencies have changed. <br />
+                    In this example, the expensive function will only run when <code>count</code> is changed and not when todo's are added.
                </p>
           </div>
      )
