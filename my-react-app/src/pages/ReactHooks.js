@@ -14,6 +14,7 @@ import MyApp from "../UseStateApp";
 import MyApp2 from "../UseStateApp2";
 import App4 from "../UseCallback";
 import App5 from "../UseMemo";
+import Demo from "../CustomHook";
 
 const ReactHooks = () => {
      return (
@@ -608,6 +609,64 @@ const ReactHooks = () => {
                     The <code>useMemo</code> Hook accepts a <u>second parameter to declare dependencies.</u> <br />
                     The expensive function will only run when its dependencies have changed. <br />
                     In this example, the expensive function will only run when <code>count</code> is changed and not when todo's are added.
+               </p>
+               <br />
+               <br />
+               <hr />
+               <h1>Custom Hooks</h1>
+               <p>
+                    Hooks are reusable functions. <br />
+                    When we have component logic that needs to be used by multiple components, we can extract that logic to a custom Hook. <br />
+                    Custom Hooks start with <code>"use"</code>. Example: <code>useFetch</code> <br />
+               </p>
+               <h2>Build a Hook</h2>
+               <p>
+                    In the following code, we are fetching data in our <code>Demo</code> component and displaying it. <br />
+                    We used fecth fake data. <br />
+                    The fetch logic may be needed in other components as well, so we will extract that into a custom Hook. <br />
+                    Move the fetch logic to a new file to be used a <b>custom Hook.</b> <br />
+               </p>
+               <span>This is useFetch.js file</span> <br />
+               <div className="customHooks">
+                    <code>
+                         {"import { useState, useEffect } from 'react';"} <br /> <br />
+                         {"const useFetch = (url) => {"}<br />
+                         {"const [data, setData] = useState(null);"}<br /><br />
+                         {"useEffect (() => {"}<br />
+                         {"fetch(url)"}<br />
+                         {".then((res) => res.json())"}<br />
+                         {".then((data) => setData(data));"}<br />
+                         {"}, [url]);"}<br /><br />
+                         {"return [data];"}<br />
+                         {"};"}<br />
+                    </code>
+               </div>
+               <span>This is Demo.js file</span> <br />
+               <div className="customHooks">
+                    <code>
+                         {"import {useFetch} from './useFetch';"} <br /><br />
+                         {"const Demo = () => {"} <br />
+                         {"const [data] = useFetch('https://jsonplaceholder.typicode.com/todos')"} <br /><br />
+                         {"return ("} <br />
+                         {"<>"} <br />
+                         {"{data.map((item) => {"} <br />
+                         {"return <p key={item.id}>{item.title}</p>"} <br />
+                         {"})}"} <br />
+                         {"</>"} <br />
+                         {");"} <br />
+                         {"};"} <br />
+                    </code>
+               </div>
+                <br />
+               <span>The output is:</span>
+               <Demo />
+               <p>
+                    Explaining: <br />
+                    We have created a new file called <code>useFetch.js</code> containing a function called <code>useFetch</code> which contains all of the logic needed to fetch our data. <br />
+                    We removed the hard-coded URL and replaced it with a a <code>url</code> variable that can be passed to the custom Hook. <br />
+                    Lastly, we are returning our data from our Hook. <br />
+                    In <code>Demo.js</code>, we are importing our <code>useFetch</code> Hook and utilizing it like any other Hook. This is where we pass in the URL to fetch data from. <br />
+                    Now we can reuse this custom Hook in any component to fetch data from any URL.
                </p>
           </div>
      )

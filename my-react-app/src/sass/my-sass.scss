@@ -12,6 +12,7 @@ $myWeight: bold;
 $myCursor: pointer;
 $myButtonWidth: 150px;
 $myButtonHeight: 50px;
+$myWidth: 500px;
 $myRadius: 12px;
 $myRadius2: 30px;
 $fSize: 17px;
@@ -93,4 +94,11 @@ nav {
      border-radius: $myRadius;
      padding: $myPadding;
      width: $myButtonWidth;
+}
+
+.customHooks {
+     border: $myBorder;
+     border-radius: $myRadius;
+     padding: $myPadding;
+     width: $myWidth;
 }
